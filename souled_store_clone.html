@@ -1,0 +1,450 @@
+<!DOCTYPE html>
+<html>
+<head>
+<style>
+    *{
+        padding: 0;
+        margin: 0;
+        box-sizing: border-box;
+    }
+
+.second-navbar{
+    display: flex;
+    background-color: white;
+    border: 1px solid black;
+    height: 60px;
+    align-items: center;
+}
+.navbar{
+    margin-left: 200px;
+    
+}
+.dropbtn {
+  background-color: white;
+  color: rgb(119, 113, 113);
+  padding: 16px;
+  font-size: 14px;
+  border: none;
+  cursor: pointer;
+  text-transform: uppercase;
+  font-weight: 550;
+  font-family: sans-serif;
+  height: 55px;
+  
+}
+
+.dropdown {
+  position: relative;
+  display: inline-block;
+  
+}
+
+.dropdown-content {
+  display: none;
+  position: absolute;
+  background-color: #f9f9f9;
+  width: max-content    ;
+  box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+  z-index: 2;
+  font-size: small;
+  padding-top: 12px;
+  padding-bottom: 10px;
+  min-width: 160px;
+  
+}
+
+.dropdown-content a {
+  color: black;
+  padding: 8px 16px;
+  text-decoration: none;
+  display: block;
+  color: rgb(141, 136, 136);
+  text-transform: capitalize;
+}
+
+.dropdown-content a:hover {color: red;
+    
+}
+
+.dropdown:hover .dropdown-content {display: block;
+    transition: block 1s ease-in ;
+}
+
+.dropdown:hover .dropbtn {
+    border-bottom: 5px solid red;
+    color: red;
+    background-color: rgba(red, 0, 0, 1);
+    
+}
+.row{
+    padding-left: 200px;
+}
+
+  .column {
+    width: 200px;
+    float: left;
+    overflow: hidden;
+    padding: 10px 50px;    
+    background-color: #f9f9f9;    
+  }
+  
+.header{
+    background-color: rgb(225, 27, 35);
+    display: flex;
+    width: 100%;
+    height: 45px;
+    align-items: center;
+}
+.list{
+    display: flex;
+    list-style: none;
+    align-items: center;
+    margin-left: 300px;
+    color: white;
+    font-weight: 900;
+    font-size: .875rem;
+    text-transform: uppercase;
+}
+.list li{
+    border: 0.1px solid rgb(81, 77, 77);
+    text-align: center;
+    padding: 10px;
+    margin-top: 0;
+    height: 45px;
+    width: 120px;
+    font-size: 0.9em;
+    z-index: 1;
+    cursor: pointer;
+}
+.list2{
+    list-style: none;
+    display: flex;
+    margin-left: 150px;
+    align-items: center;
+    font-size: 0.7em;
+    text-transform: uppercase;
+    color: white;
+}
+.list2 li{
+    padding: 10px;
+}
+.top_navRight{
+   
+    align-items: center;
+    display: flex;
+    float: right;
+    margin: 20px;
+    position: absolute;
+    right: 200px;
+}
+.links{
+    
+    color: white;
+    text-decoration: none;
+    text-transform: uppercase;
+    font-weight: 400;
+    font-size: 0.7em;
+    padding:0 10px 0 10px;
+}
+.icon{
+    font-size: 10px;
+    padding-left: 2px;
+}
+.icons{
+  display: flex;
+  margin-left: 100px;
+  z-index: 1;
+  position: relative;
+}
+
+.displayProducts{
+        width: 479px;
+        height: 479px;
+        overflow: hidden;
+        
+}
+.displayProducts img{
+        width: 100%;
+        transition: 0.5s all ease-in-out;
+}
+.displayProducts:hover img{
+  transform: scale(1.1);
+}
+.productlists{
+    list-style: none;
+    padding: 5px;
+    column-count: 5;
+}
+.productlists li{
+  text-transform: capitalize;
+  color:gray;
+  cursor: pointer;
+}
+.productlists li > h5 > a{
+  color: red;
+  font-size: 14px;
+  cursor: pointer;
+}
+ .iconWH{
+  padding: 20px;
+    
+  z-index: 1; 
+}
+
+.iconWH:hover{
+  color: red;
+}
+
+
+.container-2 input#search{
+  width: 0px;
+  height: 30px;
+  background: white;
+  border: none;
+  font-size: 10pt;
+  float: left;
+  color: #262626;
+  padding-left: 35px;
+  -webkit-border-radius: 5px;
+  -moz-border-radius: 5px;
+  border-radius: 5px;
+  color: #fff;
+ 
+  -webkit-transition: width .55s ease;
+  -moz-transition: width .55s ease;
+  -ms-transition: width .55s ease;
+  -o-transition: width .55s ease;
+  transition: width 1s ease;
+}
+
+.container-2 input#search:focus, .container-2 input#search:active{
+  outline:none;
+  width: 300px;
+}
+ 
+.container-2:hover input#search{
+width: 300px;
+}
+ 
+.container-2:hover .searchIcon{
+  color: #93a2ad;
+}
+.icons .searchIcon{
+  position: absolute; 
+  right: 81%;
+  z-index: 1;
+  top: 45%;
+  
+}
+</style>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css" integrity="sha512-z3gLpd7yknf1YoNbCzqRKc4qyor8gaKU1qmn+CShxbuBusANI9QpRohGBreCFkKxLhei6S9CQXFEbbKuqLg0DA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+</head>
+<body>
+<div class="header">
+    <ul class="list">
+        <li>Women</li>
+        <li>Men</li>
+        <li>Kids</li>
+    </ul>
+   <div class="top_navRight">
+    <a href="#" class="links">
+        <span>
+            track order
+        </span>
+    </a>
+    <a href="#" class="links">
+        <span>
+            contact us
+        </span>
+    </a>
+    <a href="#" class="links icon">
+        <span>
+            <i class="fa-solid fa-mobile-screen-button"></i>
+            download
+        </span>
+    </a>
+    </div>
+</div>
+<div class="second-navbar">
+<div class="navbar">
+  <div class="dropdown">
+    <button class="dropbtn">topwear <i class="fa-solid fa-angle-down icon"></i></button>
+    <div class="dropdown-content">
+      <a href="#">All Oversized</a>
+      <a href="#">Classic Fit T-shirts</a>
+      <a href="#">all graphic t-shirts</a>
+      <a href="#">all solid t-shirts</a>
+      <a href="#">all t-shirts</a>
+      <a href="#">polos</a>
+      <a href="#">casual t-shirts</a>
+      <a href="#">Oversized full sleeve</a>
+      <a href="#">signature drop cut t-shirts</a>
+      <a href="#">co-ord sets</a>
+      <a href="#">hoodies and sweatshirts</a>
+      <a href="#">jackets</a>
+    </div>
+  </div>
+  <div class="dropdown">
+    <button class="dropbtn">Dropdown <i class="fa-solid fa-angle-down icon"></i></button>
+    <div class="dropdown-content">
+      <a href="#">all cargos</a>
+      <a href="#">jeans</a>
+      <a href="#">cotton pants</a>
+      <a href="#">joggers</a>
+      <a href="#">shorts</a>
+      <a href="#">boxer & innerwears</a>
+      <a href="#">pajamas</a>
+    </div>
+  </div>
+  <div class="dropdown">
+    <button class="dropbtn">sneakers</button>
+  </div>
+  <div class="dropdown">
+    <button class="dropbtn">accessories <i class="fa-solid fa-angle-down icon"></i></button>
+    <div class="dropdown-content">
+      <a href="#">perfumes</a>
+      <a href="#">backpacks</a>
+      <a href="#">windcheaters & umbrella</a>
+      <a href="#">socks</a>
+      <a href="#">caps</a>
+    </div>
+  </div>
+  <div class="dropdown">
+    <button class="dropbtn">collections <i class="fa-solid fa-angle-down icon"></i></button>
+    <div class="dropdown-content">
+      <a href="#">new arrivals</a>
+      <a href="#">best seller</a>
+      <a href="#">supima</a>
+      <a href="#">streetwear</a>
+      <a href="#">superheroes</a>
+      <a href="#">activewear</a>
+      <a href="#">tie-dye</a>
+      <a href="#">hottest deals</a>
+    </div>
+  </div>
+  <div class="dropdown">
+    <button class="dropbtn">shop by themes <i class="fa-solid fa-angle-down icon"></i></button>
+    <div class="dropdown-content" style="width: 1540px; left:-875px;">
+        <div class="row">
+            <ul class="productlists">
+              <li><h5><a> tss originals</a></h5></li>
+              <li><h5><a> solids</a></h5></li>
+              <li><h5><a> superheroes</a></h5></li>
+              <li><a> all superheroes</a></li>
+              <li><a> captain america</a></li>
+              <li><a> x-men</a></li>
+              <li><a> marvel</a></li>
+              <li><a> spider-man</a></li>
+              <li><a> black panther</a></li>
+              <li><a> iron man</a></li>
+              <li><a> captain marvel</a></li>
+              <li><a> punisher</a></li>
+              <li><a> doctor strange</a></li>
+              <li><a> DC comics</a></li>
+              <li><a> batman</a></li>
+              <li><a> superman</a></li>
+              <li><a> wonder woman</a></li>
+              <li><a> the flash</a></li>
+              <li><a> hulk </a></li>
+              <li><a> thor </a></li>
+              <li><a> joker</a></li>
+              <li><a> deadpool</a></li>
+              <li><a> black adam</a></li>
+              <li><h5><a> movies & tv shows</a></h5></li>
+              <li><a> all movies & TV shows</a></li>
+              <li><a> naruto</a></li>
+              <li><a> wednesday</a></li>
+              <li><a> harry potter</a></li>
+              <li><a> money heist</a></li>
+              <li><a> stranger things</a></li>
+              <li><a> F.R.I.E.N.D.S</a></li>
+              <li><a> kung fu panda</a></li>
+              <li><a> disney</a></li>
+              <li><a> fantastic beasts</a></li>
+              <li><a> star wars</a></li>
+              <li><a> the office</a></li>
+              <li><a> brooklyn nine-nine</a></li>
+              <li><a> archie comics</a></li>
+              <li><a> TMNT</a></li>
+              <li><h5><a> cartoons and comics</a></h5></li>
+              <li><a> all cartoons </a></li>
+              <li><a> pink panther</a></li>
+              <li><a> popeye</a></li>
+              <li><a> looney tunes</a></li>
+              <li><a> minions</a></li>
+              <li><a> peanuts</a></li>
+              <li><a> the powerpuff girls</a></li>
+              <li><a> garfield</a></li>
+              <li><a> tom and jerry </a></li>
+              <li><a> courage the cowardly dog</a></li>
+              <li><a> scooby doo</a></li>
+              <li><a> rick and morty</a></li>
+              <li><a> dexter's laboratory</a></li>
+              <li><a> SpongeBob</a></li>
+              <li><a> SquarePants</a></li>
+              <li><a> we bare bears</a></li>
+              <li><a> Johnny bravo</a></li>
+              <li><a> the flintstones</a></li>
+              <li><a> sesame street</a></li>
+              <li><h5><a> sports</a></h5></li>
+              <li><a> kolkata knight riders</a></li>
+              <li><a> lucknow super giants</a></li>
+              <li><a> liverpool FC</a></li>
+              <li><a> arsenal FC</a></li>
+              <li><a> revenant</a></li>
+              <li><a> team vitality</a></li>
+              <li><a> PSG</a></li>
+              <li><a> mancherster city</a></li>
+              <li><h5><a> popular genres</a></h5></li>
+              <li><a> patterns</a></li>
+              <li><a> girl power</a></li>
+              <li><a> funny</a></li>
+              <li><a> food</a></li>
+              <li><a> animals</a></li>
+              <li><a> quotes</a></li>
+              <li><h5><a> collaborations</a></h5></li>
+              <li><a> fukrey</a></li>
+              <li><a> singapore inspired</a></li>
+              <li><a> ISRO</a></li>
+              <li><a> BGMI</a></li>
+              <li><h5><a> celebrity curations</a></h5></li>
+              <li><a> hardik pandya</a></li>
+              
+            </ul>
+
+        </div>
+
+        
+      
+    </div>
+  </div>
+  <div class="dropdown">
+    <button class="dropbtn">membership</button>
+  </div>
+</div>
+
+<div class="icons">
+  <div class=" iconWH">
+    <div class="container-2">
+      <input type="search" id="search" placeholder="Search..." />
+      <span class="searchIcon"><i class="fa fa-search"></i></span> 
+    </div>
+         
+  </div>
+  <div class="userIcon iconWH">
+    <i class="fa-regular fa-user"></i>
+  </div>
+  <div class="heartIcon iconWH">
+    <i class="fa-regular fa-heart"></i>
+  </div>
+  <div class="cartIcon iconWH">
+    <i class="fa-solid fa-cart-shopping"></i>
+  </div>
+</div>
+</div>
+
+<div class="displayProducts">
+  <img src="./model.jpg" alt="modelImg">
+</div>
+</body>
+</html>
